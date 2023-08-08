@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_items">
+
+    <fragment
+        android:id="@+id/nav_items"
+        android:name="com.example.vyaperclone.ItemsFragment"
+        android:label="@string/big"
+        tools:layout="@layout/fragment_items">
+        <action
+            android:id="@+id/action_nav_items_to_nav_Business_dasboard"
+            app:destination="@id/nav_business_dashboard" />
+        <action
+            android:id="@+id/action_nav_items_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_nav_items_to_nav_sale"
+            app:destination="@id/nav_sale" />
+        <action
+            android:id="@+id/action_nav_items_to_nav_purchase"
+            app:destination="@id/nav_purchase" />
+        <action
+            android:id="@+id/action_nav_items_to_addNewPartyFragment"
+            app:destination="@id/addNewPartyFragment" />
+        <action
+            android:id="@+id/action_updatePurchaseData"
+            app:destination="@id/updatePurchaseData" />
+        <action
+            android:id="@+id/action_updateSaleFragment"
+            app:destination="@id/updateSaleFragment" />
+        <action
+            android:id="@+id/action_partyDetailsFragment"
+            app:destination="@id/partyDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_business_dashboard"
+        android:name="com.example.vyaperclone.BusinessDashboardFragment"
+        android:label="@string/menu_Business_dashboard"
+        tools:layout="@layout/fragment_business_dashboard">
+        <action
+            android:id="@+id/action_nav_Business_dasboard_to_nav_Reports"
+            app:destination="@id/nav_reports" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reports"
+        android:name="com.example.vyaperclone.ReportsFragment"
+        android:label="@string/menu_Reports"
+        tools:layout="@layout/fragment_reports">
+        <action
+            android:id="@+id/action_nav_Reports_to_nav_sale"
+            app:destination="@id/nav_sale" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_sale"
+        android:name="com.example.vyaperclone.SaleFragment"
+        android:label="@string/sales_lists"
+        tools:layout="@layout/fragment_sale">
+        <action
+            android:id="@+id/action_nav_sale_to_nav_purchase"
+            app:destination="@id/nav_purchase" />
+        <action
+            android:id="@+id/action_nav_sale_to_addSaleFragment"
+            app:destination="@id/addSaleFragment" />
+        <action
+            android:id="@+id/action_nav_sale_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_sale_to_nav_items"
+            app:destination="@id/nav_items" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_purchase"
+        android:name="com.example.vyaperclone.PurchaseFragment"
+        android:label="@string/purchase_List"
+        tools:layout="@layout/fragment_purchase">
+        <action
+            android:id="@+id/action_nav_purchase_to_nav_expenses"
+            app:destination="@id/nav_expenses" />
+        <action
+            android:id="@+id/action_nav_purchase_to_addPurchaseFragment"
+            app:destination="@id/addPurchaseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_expenses"
+        android:name="com.example.vyaperclone.ExpensesFragment"
+        android:label="@string/expenses_list"
+        tools:layout="@layout/fragment_expenses">
+        <action
+            android:id="@+id/action_nav_expenses_to_nav_cash_banks"
+            app:destination="@id/nav_cash_banks" />
+        <action
+            android:id="@+id/action_nav_expenses_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cash_banks"
+        android:name="com.example.vyaperclone.cashBankFragment"
+        android:label="@string/bank_account"
+        tools:layout="@layout/fragment_cash_bank">
+        <action
+            android:id="@+id/action_nav_cash_banks_to_nav_myOnlineStore2"
+            app:destination="@id/nav_online_store" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_online_store"
+        android:name="com.example.vyaperclone.MyOnlineStoreFragment"
+        android:label="@string/create_online_store"
+        tools:layout="@layout/fragment_my_online_store">
+
+        <action
+            android:id="@+id/action_nav_online_store_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.vyaperclone.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.vyaperclone.AddProductFragment"
+        android:label="@string/add_line_item"
+        tools:layout="@layout/fragment_add_product">
+        <action
+            android:id="@+id/action_addProductFragment_to_nav_items"
+            app:destination="@id/nav_items" />
+        <action
+            android:id="@+id/action_addProductFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <argument
+            android:name="itemdetails"
+            app:argType="com.example.vyaperclone.ItemsEntity"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.vyaperclone.MenuItemsFragment"
+        android:label="@string/stock_item_list"
+        tools:layout="@layout/fragment_menu_items">
+        <action
+            android:id="@+id/action_nav_home_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.example.vyaperclone.AddExpenseFragment"
+        android:label="@string/add_expenses"
+        tools:layout="@layout/fragment_add_expense">
+        <action
+            android:id="@+id/action_addExpenseFragment_to_nav_expenses"
+            app:destination="@id/nav_expenses" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSaleFragment"
+        android:name="com.example.vyaperclone.AddSaleFragment"
+        android:label="@string/add_sales"
+        tools:layout="@layout/fragment_add_sale">
+        <action
+            android:id="@+id/action_addSaleFragment_to_nav_sale"
+            app:destination="@id/nav_sale" />
+        <action
+            android:id="@+id/action_addSaleFragment_to_nav_settings"
+            app:destination="@id/nav_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPurchaseFragment"
+        android:name="com.example.vyaperclone.AddPurchaseFragment"
+        android:label="@string/ad_purchase"
+        tools:layout="@layout/fragment_add_purchase" />
+    <fragment
+        android:id="@+id/addNewPartyFragment"
+        android:name="com.example.vyaperclone.AddNewPartyFragment"
+        android:label="@string/add_new_party"
+        tools:layout="@layout/fragment_add_new_party" >
+        <action
+            android:id="@+id/action_addNewPartyFragment_to_nav_items"
+            app:destination="@id/nav_items" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.vyaperclone.ProductFragment"
+        android:label="@string/products"
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/action_productFragment_to_addProductFragment2"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updatePurchaseData"
+        android:name="com.example.vyaperclone.UpdatePurchaseData"
+        android:label="@string/big"
+        tools:layout="@layout/fragment_update_purchase_data">
+        <action
+            android:id="@+id/action_updatePurchaseData"
+            app:destination="@id/nav_items" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateSaleFragment"
+        android:name="com.example.vyaperclone.UpdateSaleFragment"
+        android:label="@string/big"
+        tools:layout="@layout/fragment_update_sale">
+        <action
+            android:id="@+id/action_updateSaleFragment"
+            app:destination="@id/nav_items" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/partyDetailsFragment"
+        android:name="com.example.vyaperclone.PartyDetailsFragment"
+        android:label="Customers Details"
+        tools:layout="@layout/fragment_party_details">
+        <action
+            android:id="@+id/action_partyDetailsFragment"
+            app:destination="@id/nav_items" />
+    </fragment>
+
+</navigation>

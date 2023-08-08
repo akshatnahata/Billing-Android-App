@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_8"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chocolate"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvRsPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@id/tvTotalPrice"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/dp_2"
+        />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/tvItemSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Subtotal"
+            android:textColor="#777575"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textColor="#777575"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            app:layout_constraintRight_toLeftOf="@id/tvInto"
+            android:layout_marginRight="@dimen/dp_2"
+            />
+
+        <TextView
+            android:id="@+id/tvUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bag"
+            android:textColor="#777575"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/tvQuantity"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            android:layout_marginLeft="@dimen/dp_5"
+            />
+
+        <TextView
+            android:id="@+id/tvInto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:textColor="#777575"
+            app:layout_constraintRight_toLeftOf="@id/tvRate"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            android:layout_marginRight="@dimen/dp_2"
+            />
+
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textColor="#777575"
+            app:layout_constraintRight_toLeftOf="@id/tvEqual"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            android:layout_marginRight="@dimen/dp_5"
+            />
+
+        <TextView
+            android:id="@+id/tvEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textColor="#777575"
+            app:layout_constraintRight_toLeftOf="@id/tvRsTotal"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            android:layout_marginRight="@dimen/dp_5"
+            />
+
+        <TextView
+            android:id="@+id/tvRsTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹"
+            android:textColor="#777575"
+            app:layout_constraintRight_toLeftOf="@id/tvTotalAmount"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            android:layout_marginRight="@dimen/dp_2"
+            />
+        <TextView
+            android:id="@+id/tvTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="#777575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalPrice"
+            />
+
+        <TextView
+            android:id="@+id/tvTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tax"
+            android:textColor="#777575"
+            app:layout_constraintTop_toBottomOf="@id/tvItemSub"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tvRsTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹"
+            android:textColor="#777575"
+            app:layout_constraintRight_toLeftOf="@id/tvTotalTax"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalAmount"
+            android:layout_marginRight="@dimen/dp_2"
+            />
+        <TextView
+            android:id="@+id/tvTotalTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#777575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalAmount"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewPartyFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/partyNameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/partyNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/eg_party"
+            android:padding="@dimen/dp_5" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contactNumberInputLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@id/partyNameInputLayout"
+        android:padding="@dimen/dp_5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contactNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/contact_number"
+            android:inputType="number"
+            android:padding="@dimen/dp_5" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/openingBalanceInputLayout"
+        app:boxStrokeColor="@color/black"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contactNumberInputLayout"
+        android:layout_margin="@dimen/dp_5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/openingBalanceEditText"
+            android:inputType="number"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="wrap_content"
+            android:hint="@string/open_balance"
+            android:layout_margin="@dimen/dp_5"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateInputLayout"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/openingBalanceInputLayout"
+        android:layout_below="@id/contactNumberInputLayout"
+        android:layout_margin="@dimen/dp_5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateEditText"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="wrap_content"
+            android:hint="@string/as_of_date"
+            android:layout_margin="@dimen/dp_5"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/optionsRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateInputLayout"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/receiveRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Receive"
+            android:textStyle="bold"
+            android:textSize="@dimen/dp_15"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/payRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Pay"
+            android:textStyle="bold"
+            android:textSize="@dimen/dp_15"
+            android:layout_marginStart="@dimen/dp_10"/>
+    </RadioGroup>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutAddNewParty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/optionsRadioGroup" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerAddNewParty"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/tabLayoutAddNewParty" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_bar_color"
+        android:text="@string/btn_save"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
